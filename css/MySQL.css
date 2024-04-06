@@ -1,107 +1,112 @@
 @import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
 @import url('https://fonts.googleapis.com/css2?family=Freehand&display=swap');
+
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    overflow-x: hidden;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
 }
+
 body {
-    background-image: url(./img/D2.jpg);
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    background-color: #f0f0f0;
-    font-family: 'Poppins', sans-serif;
-    /* font-family: "Freehand", cursive; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    
+	background-image: url(../img/D2.jpg);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	background-color: #f0f0f0;
+	font-family: 'Poppins', sans-serif;
+	/* font-family: "Freehand", cursive; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
 }
 
 body p {
-    text-indent: 40px;
+	text-indent: 40px;
 }
-.card0{
-    display: flex;
-    justify-content: center;
-}
-.title{
-    margin: 50px;
-    font-size: 60px;
-    color: #000000b2;
-    backdrop-filter: blur(40px);
-    padding: 20px;
-    border-radius: 40px;
 
-}   
+.card0 {
+	display: flex;
+	justify-content: center;
+}
+
+.title {
+	margin: 50px;
+	font-size: 60px;
+	color: #000000b2;
+	backdrop-filter: blur(40px);
+	padding: 20px;
+	border-radius: 40px;
+
+}
 
 .card {
-    backdrop-filter: blur(15px) saturate(200%);
-    -webkit-backdrop-filter: blur(5px) saturate(200%);
-    background-color: rgba(255, 255, 255, 0.188);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.125);
-    width: 80%;
-    padding: 2%;
-    margin: 2%;
-    margin-left:10% ;
-    margin-right:10% ;
-    border-top: 1px solid rgba(255, 255, 255, 0.455);
-    border-left: 1px solid rgba(255, 255, 255, 0.458);
+	backdrop-filter: blur(15px) saturate(200%);
+	-webkit-backdrop-filter: blur(5px) saturate(200%);
+	background-color: rgba(255, 255, 255, 0.188);
+	border-radius: 20px;
+	border: 1px solid rgba(255, 255, 255, 0.125);
+	width: 80%;
+	padding: 2%;
+	margin: 2%;
+	margin-left: 10%;
+	margin-right: 10%;
+	border-top: 1px solid rgba(255, 255, 255, 0.455);
+	border-left: 1px solid rgba(255, 255, 255, 0.458);
 }
-.card1{
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+
+.card1 {
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
 }
 
 .card1 p {
- font-family: "Freehand", cursive;
- font-size: 30px; 
+	font-family: "Freehand", cursive;
+	font-size: 30px;
 }
-/* ------------------------------------- */
-.intro{
-    display: grid;
-    grid-template-columns: repeat(2, );
-}
-.intro-image {
 
+/* ------------------------------------- */
+.intro {
+	display: grid;
+	grid-template-columns: repeat(2, );
 }
+
+
 /* ------------------------------------- */
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
 
-  .question {
-    font-weight: bold;
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
+.question {
+	font-weight: bold;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
 
-  .answer {
-    display: none;
-    margin-bottom: 20px;
-  }
+.answer {
+	display: none;
+	margin-bottom: 20px;
+}
 
-  .answer.show {
-    display: block;
-  }
+.answer.show {
+	display: block;
+}
 
-  .topic-card h2 {
-    margin: 20px;
-    text-align: center;
-    border-bottom: 2px solid black;
-    border-top: 2px solid black;
-    padding: 10px;
-    
-  }
+.topic-card h2 {
+	margin: 20px;
+	text-align: center;
+	border-bottom: 2px solid black;
+	border-top: 2px solid black;
+	padding: 10px;
 
-  .topic-card ul{
-    padding-left: 200px;
-    overflow: hidden;
+}
 
-  }
+.topic-card ul {
+	padding-left: 200px;
+	overflow: hidden;
+
+}

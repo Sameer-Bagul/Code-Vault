@@ -7,7 +7,7 @@
     overflow-x: hidden;
 }
 body {
-    background-image: url(./img/3.jpg);
+    background-image: url(../img/3.jpg);
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -18,10 +18,19 @@ body {
 body p {
     text-indent: 40px;
 }
-.card0{
-    display: flex;
-    justify-content: center;
-    
+.card0 {
+	display: flex;
+	justify-content: center;
+}
+
+.title {
+	margin: 50px;
+	font-size: 60px;
+	color: #000000b2;
+	backdrop-filter: blur(40px);
+	padding: 20px;
+	border-radius: 40px;
+
 }
 .title{
     margin: 20px;
@@ -34,23 +43,29 @@ body p {
     -webkit-backdrop-filter: blur(5px) saturate(200%);
     background-color: rgba(255, 255, 255, 0.188);
     border-radius: 20px;
-    /* border-radius: 70% 30% 69% 31% / 70% 24% 76% 30% ; */
     border: 1px solid rgba(255, 255, 255, 0.125);
-    width: 96%;
+    width: 80%;
     padding: 2%;
     margin: 2%;
+    margin-left:10% ;
+    margin-right:10% ;
+    border-top: 1px solid rgba(255, 255, 255, 0.455);
+    border-left: 1px solid rgba(255, 255, 255, 0.458);
+
 }
-.card1{
-    width: 60%;
+
+  .card1{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
 }
+
 /* ------------------------------------- */
 .intro{
     display: grid;
     grid-template-columns: repeat(2, );
 }
-.intro-image {
 
-}
 /* ------------------------------------- */
 .container {
     max-width: 800px;
@@ -80,4 +95,10 @@ body p {
     border-top: 2px solid black;
     padding: 10px;
     
+  }
+
+  .topic-card ul {
+    padding-left: 200px;
+    overflow: hidden;
+  
   }
