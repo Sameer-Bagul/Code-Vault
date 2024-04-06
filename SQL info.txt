@@ -1,0 +1,9 @@
+What is SQL 
+    -> Structured Query Language
+    -> we can do crud operations
+    -> 
+
+MySQL vs SQL 
+    -> SQL is a query Language , MySQL is itself RDMS
+    -> Way to Access data , Data is Accessed on it 
+    -> 
