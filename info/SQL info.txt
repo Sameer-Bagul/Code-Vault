@@ -6,4 +6,3 @@ What is SQL
 MySQL vs SQL 
     -> SQL is a query Language , MySQL is itself RDMS
     -> Way to Access data , Data is Accessed on it 
-    -> 
