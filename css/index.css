@@ -1,5 +1,7 @@
-body {
-    font-family: Arial, sans-serif;
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+
+body{
     margin: 0;
     background-image: url(../img/5.jpg);
     background-position: center;
@@ -11,55 +13,106 @@ body {
     align-items: center;
     justify-content: center;
     list-style: none;
+    text-decoration: none;
 }
-
 .title {
-    font-size: 50px;
+    font-size: 40px;
     color: #000000;
     font-weight: 700;
-
 }
-.card0 {
-	display: flex;
-	justify-content: center;
-    padding-left: 25px; padding-right:25px ;
-    margin-top: 40px;
+
+
+.title-card {
     border-radius: 15px;
     backdrop-filter: blur(50px);
-
-}
-
-.intro {
-    display: flex;
-    justify-content: center;
-    align-items: center;    
-}
-.intro p {
-    padding-left: 50px; padding-right:50px ;
-    font-size: 20px;
-    text-indent: 50px;
-}
-
-.card {
-    width: 94%;
-    margin-left: 3%;
-    margin-right: 3%;
-    margin-top: 3%;
-    padding: 3%;
+    margin: 10px;
+    margin-top: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
     border-radius: 20px;
-    backdrop-filter: blur(90px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.091); /* Adjust transparency as needed */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Adjust transparency as needed */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Adjust shadow as needed */
 }
 
-.intro p {
-    margin-bottom: 20px;
+/** general styling for all cards  */
+.card {
+    width: 80%;
+    backdrop-filter: blur(20px);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.091); /* Adjust transparency as needed */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Adjust transparency as needed */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08); /* Adjust shadow as needed */
 }
 
-.topic {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    width: 94%;
-    margin: 0%;
-    padding: 3%;
+
+.intro-card .inner-card-section {
+    padding: 30px;
+}
+.intro-card p{
+    text-indent: 40px;
+    font-size: 18px;
+    margin: 30px;
+}
+.topic-card .inner-card-section h1{
+    text-align: center;
+}
+
+.item-container .topic_item {
+    margin: 10px;
+    padding: 10px;
+    font-size: 18px;
+    background: rgba(255, 255, 255, 0.164);
+    color: #000000;
+    list-style: none;
+    border-radius: 10px;
+    
+}
+
+.topic_item a {
+    text-decoration: none;
+    color: #000000;
+    margin-left: 50px;
+}
+.item-container .topic_item:hover{
+    cursor: pointer;
+    transform: scale(0.99);
+    background: rgba(255, 255, 255, 0.085);
+    
+}
+
+@media (max-width: 600px) {
+    .card {
+        width: 90%; /* Adjust width as needed for smaller screens */
+        margin: 5px;
+        padding: 3px;
+    }
+    .title {
+        font-size: 30px; /* Adjust font size for smaller screens */
+    }
+    .title-card {
+        padding-left: 20px; /* Adjust padding for smaller screens */
+        padding-right: 20px; /* Adjust padding for smaller screens */
+    }
+    .intro-card .inner-card-section {
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+    .intro-card p {
+        text-indent: 15px; /* Adjust text indent for smaller screens */
+        font-size: 16px; /* Adjust font size for smaller screens */
+        margin: 15px;
+    }
+    .topic_item {
+        margin: 5px; /* Adjust margin for smaller screens */
+        padding: 5px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+    .topic_item a {
+        margin-left: 20px; /* Adjust margin for smaller screens */
+    }
+    .topic-card h1{
+        font-size: 25px;
+    }
 }

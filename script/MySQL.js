@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const questions = document.querySelectorAll('.question');
+  const topics = document.querySelectorAll('.topic');
 
-    questions.forEach(function (question) {
-      question.addEventListener('click', function () {
-        const answer = this.nextElementSibling;
-        answer.classList.toggle('show');
+  topics.forEach(function (topic) {
+      topic.addEventListener('click', function () {
+          const details = this.nextElementSibling;
+          details.classList.toggle('show');
       });
-    });
   });
+});

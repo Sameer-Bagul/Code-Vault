@@ -1,52 +1,100 @@
-------- DDL commands on the Database -------
+------- DDL COMMANDS ON THE DATABASE -------
 
-create database org;
-show databases;
-use org;
+CREATE DATABASE org; -- Creates a new database named 'org'
+SHOW DATABASES; -- Displays all existing databases
+USE org; -- Sets the current database context to 'org'
 
-create table worker(
-    worker_id int not null key auto_increment,
-    first_name char(25),
-    last_name char(25),
-    salary int(15),
-    joining_date datetime,
-    department char(25)
+CREATE TABLE worker(
+    worker_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT, -- Defines a table 'worker' with specific columns
+    first_name CHAR(25),
+    last_name CHAR(25),
+    salary INT(15),
+    joining_date DATETIME,
+    department CHAR(25)
 );
 
-insert into worker (worker_id, first_name, last_name, salary, joining_date, department) 
-values
-(001, 'sameer', 'bagul', '1200000', '14-02-20 09.00.00', 'HR'),
+INSERT INTO worker (worker_id, first_name, last_name, salary, joining_date, department) 
+VALUES
+(001, 'sameer', 'bagul', '1200000', '14-02-20 09.00.00', 'HR'), -- Inserts data into the 'worker' table
 (001, 'yash', 'chavan', '1200000', '14-02-20 09.00.00', 'HR'),
 (001, 'sumit', 'chavan', '1200000', '14-02-20 09.00.00', 'HR');
 
-create table bonus (
-    worker_ref_id int, 
-    bonus_amount int(10), 
-    bonus_date datetime,
-    foreign key (worker_ref_id) references worker(worker_id) on delete cascade
-);
+CREATE TABLE bonus (
+    worker_ref_id INT, 
+    bonus_amount INT(10), 
+    bonus_date DATETIME,
+    FOREIGN KEY (worker_ref_id) REFERENCES worker(worker_id) ON DELETE CASCADE
+); -- Creates a table 'bonus' with foreign key reference to 'worker' table
 
-insert into bonus (worker_ref_id ,bonus_amount ,bonus_date ) 
-values
-('001', '2000', '16-02-20'),
+INSERT INTO bonus (worker_ref_id ,bonus_amount ,bonus_date ) 
+VALUES
+('001', '2000', '16-02-20'), -- Inserts data into the 'bonus' table
 ('002', '200', '16-02-20'),
 ('003', '20', '16-02-20'); 
 
-create table title (
-    worker_ref_id int ,
-    worker_title char(25),
-    affected_from datetime, 
-    foreign key (worker_id) references worker(worker_id) on delete cascade
-);
+CREATE TABLE title (
+    worker_ref_id INT ,
+    worker_title CHAR(25),
+    affected_from DATETIME, 
+    FOREIGN KEY (worker_id) REFERENCES worker(worker_id) ON DELETE CASCADE
+); -- Creates a table 'title' with foreign key reference to 'worker' table
 
-insert into title (worker_ref_id, worker_title ,affected_from)
-values 
-('001', 'manager', '2016-02-20 00:00:00'),
+INSERT INTO title (worker_ref_id, worker_title ,affected_from)
+VALUES 
+('001', 'manager', '2016-02-20 00:00:00'), -- Inserts data into the 'title' table
 ('002', 'manager', '2016-02-20 00:00:00'),
-('003', 'manager', '2016-02-20 00:00:00'),
+('003', 'manager', '2016-02-20 00:00:00');
 
--- in workbench we can see automatically generated ER - moodel diagram 
+------- DQL COMMANDS ON THE DATABASE -------
 
--- Databses -> reverse engineer  -> select instance -> select db -> continue
+--- SELECT ---
+SELECT * FROM worker; -- Retrieves all rows from the 'worker' table
 
-------- DQL commands on the DAtabase -------
+SELECT first_name, salary FROM worker; -- Retrieves specific columns from the 'worker' table
+
+SELECT 44 + 11; -- Demonstrates the usage of a dummy table ('DUAL') to perform operations
+
+SELECT LCASE('SAMEER'); -- Applies the lowercase function to the provided string
+
+--- WHERE ---
+SELECT * FROM worker WHERE salary > 80000; -- Retrieves rows from 'worker' table based on a condition
+
+--- BETWEEN --- [Range is inclusive] --- [0, 100]
+SELECT * FROM worker WHERE salary BETWEEN 80000 AND 300000; -- Retrieves rows within a salary range
+
+--- reduce or statement
+
+SELECT * FROM worker where department = 'HR' OR department = "Admin";
+-- better way : IN -- 
+SELECT * FROM worker WHERE department IN ('HR', 'Admin');  --- reduces multiple Or 
+--- NOT
+SELECT * from worker WHERE department NOT IN ('HR', 'Admin');
+
+
+--- Pattern searching ---
+SELECT * FROM worker where first_name LIKE '%i%';
+
+
+--- Sorting Using ORDER BY ---
+SELECT * FROM worker ORDER BY salary;
+
+
+--- DISTINCT keyword -> to et distinct value from table
+SELECT DISTINCT department FROM worker;
+
+
+--- Data Grouping -> GROUP BY 
+SELECT department FROM worker GROUP BY department;
+
+SELECT department, COUNT(department) from worker GROUP BY department; ---> this will 
+
+--? Q. Find avg salary per department.
+--* A. SELECT department, AVG(salary) FROM worker GROUP BY department;
+
+-- MIN
+SELECT department, MIN(salary) FROM worker GROUP BY department;
+
+--- having --> GROUP BY HAVING , HAVING works with GROUP BY 
+--? Q. department, count having more than 2 worker
+--* A. 
+SELECT department, COUNT(department) FROM worker GROUP BY department HAVING COUNT department > 2 ;  

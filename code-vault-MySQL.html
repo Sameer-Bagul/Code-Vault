@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Vault - MySQL</title>
     <link rel="stylesheet" href="./css/MySQL.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -16,17 +17,16 @@
 
     <!-- Intro para -->
     <div class="intro">
-        <div class="card card1">
+        <div class="intro-card card">
             <p>
                 Welcome to my MySQL journey! Here, you'll find a treasure trove of code snippets and notes from my
                 exploration and experimentation with MySQL, a powerful relational database management system.
             </p>
-            <br>
             <p>
                 Whether you're a seasoned database administrator seeking inspiration or a newcomer eager to learn, this
                 platform is designed to be your go-to resource.
             </p>
-            <br>
+        
             <p>
                 Feel free to delve into the depths of my database adventures, glean insights from my experiences, and
                 utilize these snippets in your own projects. Let's embark on this journey together, where data
@@ -41,56 +41,108 @@
     </div>
 
     <!-- index section -->
+   
     <div class="topic-card card">
-        <h2>Topics</h2>
-        <ul>
-            <div class="faq-item">
-                <div class="question">MySQL Basics</div>
-                <div class="answer">
-                    <ul>
-                        <li>Introduction to MySQL</li>
-                        <li>Installation and Setup</li>
-                        <li>Basic SQL Commands</li>
-                    </ul>
-                </div>
+        <h2>Topics in MySQL</h2>
+
+        <div class="topic-item-container">
+            <div class="topic">
+                <i class='bx bx-chevron-down'></i>
+                <p>Introduction to MySQL</p>
+            </div>
+            <div class="details">
+                <ul>
+                    <li>Overview of MySQL Database Management System</li>
+                    <li>Installation and Setup</li>
+                    <li>Basic Commands and Syntax</li>
+                </ul>
             </div>
 
-            <div class="faq-item">
-                <div class="question">Database Design</div>
-                <div class="answer">
-                    <ul>
-                        <li>Entity-Relationship Model</li>
-                        <li>Normalization</li>
-                        <li>Indexes and Constraints</li>
-                    </ul>
-                </div>
+        </div>
+
+        <div class="topic-item-container">
+            <div class="topic">
+                <i class='bx bx-chevron-down'></i>
+                <p>MySQL Data Types</p>
+            </div>
+            <div class="details">
+                <ul>
+                    <li>Numeric Data Types</li>
+                    <li>String Data Types</li>
+                    <li>Date and Time Data Types</li>
+                </ul>
             </div>
 
-            <div class="faq-item">
-                <div class="question">Advanced SQL</div>
-                <div class="answer">
-                    <ul>
-                        <li>Joins</li>
-                        <li>Subqueries</li>
-                        <li>Stored Procedures</li>
-                        <li>Transactions</li>
-                    </ul>
-                </div>
+        </div>
+
+        <div class="topic-item-container">
+            <div class="topic">
+                <i class='bx bx-chevron-down'></i>
+                <p>MySQL Queries</p>
+            </div>
+            <div class="details">
+                <ul>
+                    <li>SELECT Statement</li>
+                    <li>Filtering and Sorting Data</li>
+                    <li>Aggregate Functions</li>
+                    <li>Joins and Subqueries</li>
+                </ul>
             </div>
 
-            <div class="faq-item">
-                <div class="question">Database Administration</div>
-                <div class="answer">
-                    <ul>
-                        <li>User Management</li>
-                        <li>Backup and Recovery</li>
-                        <li>Performance Tuning</li>
-                        <li>Security</li>
-                    </ul>
-                </div>
+        </div>
+
+        <div class="topic-item-container">
+            <div class="topic">
+                <i class='bx bx-chevron-down'></i>
+                <p>MySQL Administration</p>
             </div>
-        </ul>
+            <div class="details">
+                <ul>
+                    <li>User Management</li>
+                    <li>Database Backup and Restore</li>
+                    <li>Performance Tuning</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="topic-item-container">
+            <div class="topic">
+                <i class='bx bx-chevron-down'></i>
+                <p>Advanced MySQL Concepts</p>
+            </div>
+            <div class="details">
+                <ul>
+                    <li>Stored Procedures and Functions</li>
+                    <li>Triggers and Events</li>
+                    <li>Transactions</li>
+                    <li>Indexes and Optimization</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="topic-item-container">
+            <div class="topic">
+                <i class='bx bx-chevron-down'></i>
+                <p>MySQL Security</p>
+            </div>
+            <div class="details">
+                <ul>
+                    <li>Access Control and Permissions</li>
+                    <li>SSL Configuration</li>
+                    <li>Security Best Practices</li>
+                </ul>
+            </div>
+
+        </div>
+
     </div>
+    <script src="./script/script.js"></script>
+</body>
+
+</html>
+
 
 
     <!-- Notes start here -->

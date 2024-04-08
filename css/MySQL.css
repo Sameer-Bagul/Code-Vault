@@ -14,11 +14,10 @@ body {
 	background-attachment: fixed;
 	background-color: #f0f0f0;
 	font-family: 'Poppins', sans-serif;
-	/* font-family: "Freehand", cursive; */
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-
+	align-items: center;
 }
 
 body p {
@@ -28,6 +27,7 @@ body p {
 .card0 {
 	display: flex;
 	justify-content: center;
+	
 }
 
 .title {
@@ -37,7 +37,17 @@ body p {
 	backdrop-filter: blur(40px);
 	padding: 20px;
 	border-radius: 40px;
+	border-top: 1px solid rgba(255, 255, 255, 0.455);
+	border-left: 1px solid rgba(255, 255, 255, 0.458);
+	background-color: rgba(255, 255, 255, 0.188);
+	border-radius: 20px;
 
+}
+
+.title {
+	margin: 20px;
+	font-size: 40px;
+	color: #000000;
 }
 
 .card {
@@ -45,34 +55,28 @@ body p {
 	-webkit-backdrop-filter: blur(5px) saturate(200%);
 	background-color: rgba(255, 255, 255, 0.188);
 	border-radius: 20px;
-	border: 1px solid rgba(255, 255, 255, 0.125);
 	width: 80%;
-	padding: 2%;
-	margin: 2%;
-	margin-left: 10%;
-	margin-right: 10%;
+	padding: 20px;
+	margin: 20px;
 	border-top: 1px solid rgba(255, 255, 255, 0.455);
 	border-left: 1px solid rgba(255, 255, 255, 0.458);
+
 }
 
-.card1 {
+.intro-card {
 	width: 80%;
 	margin-left: 10%;
 	margin-right: 10%;
-}
-
-.card1 p {
-	font-family: 'Poppins';
-	font-size: 15px;
+	background-color: rgba(255, 255, 255, 0.32);
+	
 }
 
 /* ------------------------------------- */
-.intro {
-	display: grid;
-	grid-template-columns: repeat(2, );
+.intro-card p{
+	margin: 10px;
+	padding: 10px;
+	font-size: 20px;
 }
-
-
 /* ------------------------------------- */
 .container {
 	max-width: 800px;
@@ -80,18 +84,49 @@ body p {
 	padding: 20px;
 }
 
-.question {
-	font-weight: bold;
-	margin-bottom: 10px;
+.topic-item-container{
+	width: 100%;
+	height: auto;
+	margin:10px;
+	padding: 10px;
+	backdrop-filter: blur(15px) saturate(200%);
+	-webkit-backdrop-filter: blur(5px) saturate(200%);
+	background-color: rgba(255, 255, 255, 0.034);
+	border-radius: 20px;
+	border-top: 1px solid rgba(255, 255, 255, 0.455);
+	border-left: 1px solid rgba(255, 255, 255, 0.458);
+	transition: all .40 ease;
+}
+
+
+.topic-item-container .topic{
+	margin-left: 40px;
+	width: 90%;
+}
+.topic-item-container i{
+	align-self: center;
+	font-size: 30px;
+	font-weight: 500;
+}
+
+.topic {
+	font-size: 20px;
+	font-weight: 500;
+	margin: 10px;
 	cursor: pointer;
+	display: flex;
 }
 
-.answer {
+.details {
 	display: none;
-	margin-bottom: 20px;
+	margin: 20px;
+	margin-left: 70px;
 }
-
-.answer.show {
+.details li{
+	font-size: 15;
+}
+ 
+.details.show {
 	display: block;
 }
 
@@ -101,11 +136,5 @@ body p {
 	border-bottom: 2px solid black;
 	border-top: 2px solid black;
 	padding: 10px;
-
-}
-
-.topic-card ul {
-	padding-left: 200px;
-	overflow: hidden;
 
 }
