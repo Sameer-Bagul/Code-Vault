@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android Development - Web Notes</title>
+    <link rel="stylesheet" href="./css/general.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="card0">
+        <h1 class="title">Android Development Web Notes</h1>
+    </div>
+
+    <div class="intro">
+        <div class="card intro-card">
+            <p>
+                Welcome to my Android development web notes! Here, you'll find a collection of notes and resources
+                covering various aspects of Android app development.
+            </p>
+            <p>
+                Whether you're just starting out or looking to expand your skills, these notes are designed to provide
+                guidance and insights into Android development best practices and techniques.
+            </p>
+            <p>
+                Feel free to explore the topics below, dive into specific areas of interest, and enhance your
+                understanding of Android development concepts.
+            </p>
+        </div>
+    </div>
+
+    <div class="topic-card card">
+        <h2>Topics in Android Development</h2>
+
+        <div class="topic-item-container">
+            <div class="topic question">
+                <i class='bx bx-chevron-down'></i>
+                <p>Getting Started</p>
+            </div>
+            <div class="details">
+                <ul>
+                    <li>Setting up Android Studio</li>
+                    <li>Understanding the Android Development Environment</li>
+                    <li>Creating Your First Android Project</li>
+                    <li>Exploring Project Structure</li>
+                    <li>Gradle Build System</li>
+                    <li>Android Virtual Device (AVD) Manager</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Add more topics as needed -->
+
+    </div>
+    <script src="./script/android.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const questions = document.querySelectorAll('.question');
+
+            questions.forEach(function (question) {
+                question.addEventListener('click', function () {
+                    const answer = this.nextElementSibling;
+                    answer.classList.toggle('show');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

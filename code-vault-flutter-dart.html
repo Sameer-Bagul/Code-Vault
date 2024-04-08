@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flutter & Dart - Web Notes</title>
+    <link rel="stylesheet" href="./css/flutter_dart.css">
+    <link href='https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="card0">
+        <h1 class="title">Flutter & Dart Web Notes</h1>
+    </div>
+
+    <div class="intro">
+        <div class="card intro-card">
+            <p>
+                Welcome to my Flutter and Dart web notes! Here, you'll find a collection of notes and resources covering
+                various aspects of Flutter app development and Dart programming language.
+            </p>
+            <p>
+                Whether you're new to mobile app development or looking to learn Flutter for cross-platform
+                development, these notes are designed to help you understand Flutter and Dart concepts effectively.
+            </p>
+            <p>
+                Feel free to explore the topics below, delve into specific areas of interest, and enhance your Flutter
+                and Dart skills.
+            </p>
+        </div>
+    </div>
+
+    <div class="topic-card card">
+        <h2>Topics in Flutter & Dart</h2>
+
+        <div class="topic-item-container">
+            <div class="topic question">
+                <i class='bx bx-chevron-down'></i>
+                <p>Dart Language Basics</p>
+            </div>
+            <div class="details">
+                <ul>
+                    <li>Introduction to Dart</li>
+                    <li>Dart Syntax and Structure</li>
+                    <li>Data Types and Variables</li>
+                    <li>Operators and Expressions</li>
+                    <li>Control Structures (if, else, switch, loops)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topic-item-container">
+            <div class="topic question">
+                <i class='bx bx-chevron-down'></i>
+                <p>Flutter Basics</p>
+            </div>
+            <div class="details">
+                <ul>
+                    <li>Introduction to Flutter</li>
+                    <li>Flutter Widgets and Layouts</li>
+                    <li>Stateful and Stateless Widgets</li>
+                    <li>Handling User Input</li>
+                    <li>Navigation and Routing</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="topic-item-container">
+            <div class="topic question">
+                <i class='bx bx-chevron-down'></i>
+                <p>Advanced Flutter Concepts</p>
+            </div>
+            <div class="details">
+                <ul>
+                    <li>State Management in Flutter</li>
+                    <li>Working with Asynchronous Operations</li>
+                    <li>Using Plugins and Packages</li>
+                    <li>Internationalization and Localization</li>
+                    <li>Testing and Debugging</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Add more topics as needed -->
+
+    </div>
+    <script src="./script/flutter_dart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const questions = document.querySelectorAll('.question');
+
+            questions.forEach(function (question) {
+                question.addEventListener('click', function () {
+                    const answer = this.nextElementSibling;
+                    answer.classList.toggle('show');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
