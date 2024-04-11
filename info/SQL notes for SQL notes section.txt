@@ -132,7 +132,7 @@ SQL statements consists of keywords that are easy to understand.
 
 The following SQL statement returns all records from a table named "Customers":
 
-ExampleGet your own SQL Server
+Example
 Select all records from the Customers table:
 
 SELECT * FROM Customers;
@@ -186,7 +186,7 @@ SQL SELECT Statement
 The SQL SELECT Statement
 The SELECT statement is used to select data from a database.
 
-ExampleGet your own SQL Server
+Example
 Return data from the Customers table:
 
 SELECT CustomerName, City FROM Customers;
@@ -223,7 +223,7 @@ SQL SELECT DISTINCT Statement
 The SQL SELECT DISTINCT Statement
 The SELECT DISTINCT statement is used to return only distinct (different) values.
 
-ExampleGet your own SQL Server
+Example
 Select all the different countries from the "Customers" table:
 
 SELECT DISTINCT Country FROM Customers;
@@ -270,7 +270,7 @@ The WHERE clause is used to filter records.
 
 It is used to extract only those records that fulfill a specified condition.
 
-ExampleGet your own SQL Server
+Example
 Select all customers from Mexico:
 
 SELECT * FROM Customers
@@ -328,7 +328,7 @@ SQL ORDER BY Keyword
 The SQL ORDER BY
 The ORDER BY keyword is used to sort the result-set in ascending or descending order.
 
-ExampleGet your own SQL Server
+Example
 Sort the products by price:
 
 SELECT * FROM Products
@@ -390,7 +390,7 @@ The WHERE clause can contain one or many AND operators.
 
 The AND operator is used to filter records based on more than one condition, like if you want to return all customers from Spain that starts with the letter 'G':
 
-ExampleGet your own SQL Server
+Example
 Select all customers from Spain that starts with the letter 'G':
 SELECT *
 FROM Customers
@@ -453,7 +453,7 @@ The WHERE clause can contain one or more OR operators.
 
 The OR operator is used to filter records based on more than one condition, like if you want to return all customers from Germany but also those from Spain:
 
-ExampleGet your own SQL Server
+Example
 Select all customers from Germany or Spain:
 
 SELECT *
@@ -516,7 +516,7 @@ The NOT operator is used in combination with other operators to give the opposit
 
 In the select statement below we want to return all customers that are NOT from Spain:
 
-ExampleGet your own SQL Server
+Example
 Select only the customers that are NOT from Spain:
 
 SELECT * FROM Customers
@@ -606,7 +606,7 @@ Wolski	Zbyszek	ul. Filtrowa 68	Walla	01-012	Poland
 INSERT INTO Example
 The following SQL statement inserts a new record in the "Customers" table:
 
-ExampleGet your own SQL Server
+Example
 INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
 VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
 The selection from the "Customers" table will now look like this:
@@ -711,7 +711,7 @@ The IS NULL operator is used to test for empty values (NULL values).
 
 The following SQL lists all customers with a NULL value in the "Address" field:
 
-ExampleGet your own SQL Server
+Example
 SELECT CustomerName, ContactName, Address
 FROM Customers
 WHERE Address IS NULL;
@@ -754,7 +754,7 @@ Around the Horn	Thomas Hardy	120 Hanover Sq.	London	WA1 1DP	UK
 UPDATE Table
 The following SQL statement updates the first customer (CustomerID = 1) with a new contact person and a new city.
 
-ExampleGet your own SQL Server
+Example
 UPDATE Customers
 SET ContactName = 'Alfred Schmidt', City= 'Frankfurt'
 WHERE CustomerID = 1;
@@ -837,7 +837,7 @@ Around the Horn	Thomas Hardy	120 Hanover Sq.	London	WA1 1DP	UK
 SQL DELETE Example
 The following SQL statement deletes the customer "Alfreds Futterkiste" from the "Customers" table:
 
-ExampleGet your own SQL Server
+Example
 DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
 The "Customers" table will now look like this:
 
@@ -873,7 +873,7 @@ The SELECT TOP clause is used to specify the number of records to return.
 
 The SELECT TOP clause is useful on large tables with thousands of records. Returning a large number of records can impact performance.
 
-ExampleGet your own SQL Server
+Example
 Select only the first 3 records of the Customers table:
 
 SELECT TOP 3 * FROM Customers;
@@ -1017,7 +1017,7 @@ The MIN() function returns the smallest value of the selected column.
 
 The MAX() function returns the largest value of the selected column.
 
-MIN ExampleGet your own SQL Server
+MIN Example
 Find the lowest price in the Price column:
 
 SELECT MIN(Price)
@@ -1065,7 +1065,7 @@ SQL COUNT() Function
 The SQL COUNT() Function
 The COUNT() function returns the number of rows that matches a specified criterion.
 
-ExampleGet your own SQL Server
+Example
 Find the total number of rows in the Products table:
 
 SELECT COUNT(*)
@@ -1136,7 +1136,7 @@ SQL SUM() Function
 The SQL SUM() Function
 The SUM() function returns the total sum of a numeric column.
 
-ExampleGet your own SQL Server
+Example
 Return the sum of all Quantity fields in the OrderDetails table:
 
 SELECT SUM(Quantity)
@@ -1207,7 +1207,7 @@ SQL AVG() Function
 The SQL AVG() Function
 The AVG() function returns the average value of a numeric column.
 
-ExampleGet your own SQL Server
+Example
 Find the average price of all products:
 
 SELECT AVG(Price)
@@ -1268,7 +1268,7 @@ SQL AVG() Function
 The SQL AVG() Function
 The AVG() function returns the average value of a numeric column.
 
-ExampleGet your own SQL Server
+Example
 Find the average price of all products:
 
 SELECT AVG(Price)
@@ -1327,6 +1327,1613 @@ You will learn more about the GROUP BY clause later in this tutorial.
 --------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+SQL LIKE Operator
+The SQL LIKE Operator
+The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
+
+There are two wildcards often used in conjunction with the LIKE operator:
+
+ The percent sign % represents zero, one, or multiple characters
+ The underscore sign _ represents one, single character
+You will learn more about wildcards in the next chapter.
+
+Example
+Select all customers that starts with the letter "a":
+
+SELECT * FROM Customers
+WHERE CustomerName LIKE 'a%';
+Syntax
+SELECT column1, column2, ...
+FROM table_name
+WHERE columnN LIKE pattern;
+
+Demo Database
+Below is a selection from the Customers table used in the examples:
+
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
+1
+
+Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany
+2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda. de la Constitución 2222	México D.F.	05021	Mexico
+3	Antonio Moreno Taquería	Antonio Moreno	Mataderos 2312	México D.F.	05023	Mexico
+4
+
+Around the Horn	Thomas Hardy	120 Hanover Sq.	London	WA1 1DP	UK
+5	Berglunds snabbköp	Christina Berglund	Berguvsvägen 8	Luleå	S-958 22	Sweden
+The _ Wildcard
+The _ wildcard represents a single character.
+
+It can be any character or number, but each _ represents one, and only one, character.
+
+Example
+Return all customers from a city that starts with 'L' followed by one wildcard character, then 'nd' and then two wildcard characters:
+
+SELECT * FROM Customers
+WHERE city LIKE 'L_nd__';
+The % Wildcard
+The % wildcard represents any number of characters, even zero characters.
+
+Example
+Return all customers from a city that contains the letter 'L':
+
+SELECT * FROM Customers
+WHERE city LIKE '%L%';
+Starts With
+To return records that starts with a specific letter or phrase, add the % at the end of the letter or phrase.
+
+Example
+Return all customers that starts with 'La':
+
+SELECT * FROM Customers
+WHERE CustomerName LIKE 'La%';
+Tip: You can also combine any number of conditions using AND or OR operators.
+
+Example
+Return all customers that starts with 'a' or starts with 'b':
+
+SELECT * FROM Customers
+WHERE CustomerName LIKE 'a%' OR CustomerName LIKE 'b%';
+Ends With
+To return records that ends with a specific letter or phrase, add the % at the beginning of the letter or phrase.
+
+Example
+Return all customers that ends with 'a':
+
+SELECT * FROM Customers
+WHERE CustomerName LIKE '%a';
+Tip: You can also combine "starts with" and "ends with":
+
+Example
+Return all customers that starts with "b" and ends with "s":
+
+SELECT * FROM Customers
+WHERE CustomerName LIKE 'b%s';
+Contains
+To return records that contains a specific letter or phrase, add the % both before and after the letter or phrase.
+
+Example
+Return all customers that contains the phrase 'or'
+
+SELECT * FROM Customers
+WHERE CustomerName LIKE '%or%';
+Combine Wildcards
+Any wildcard, like % and _ , can be used in combination with other wildcards.
+
+Example
+Return all customers that starts with "a" and are at least 3 characters in length:
+
+SELECT * FROM Customers
+WHERE CustomerName LIKE 'a__%';
+Example
+Return all customers that have "r" in the second position:
+
+SELECT * FROM Customers
+WHERE CustomerName LIKE '_r%';
+Without Wildcard
+If no wildcard is specified, the phrase has to have an exact match to return a result.
+
+Example
+Return all customers from Spain:
+
+SELECT * FROM Customers
+WHERE Country LIKE 'Spain';
+
+
+----------------------------------------------------------------------
+
+SQL Wildcards
+SQL Wildcard Characters
+A wildcard character is used to substitute one or more characters in a string.
+
+Wildcard characters are used with the LIKE operator. The LIKE operator is used in a WHERE clause to search for a specified pattern in a column.
+
+Example
+Return all customers that starts with the letter 'a':
+
+SELECT * FROM Customers
+WHERE CustomerName LIKE 'a%';
+Wildcard Characters
+Symbol	Description
+%	Represents zero or more characters
+_	Represents a single character
+[]	Represents any single character within the brackets *
+^	Represents any character not in the brackets *
+-	Represents any single character within the specified range *
+{}	Represents any escaped character **
+* Not supported in PostgreSQL and MySQL databases.
+
+** Supported only in Oracle databases.
+
+Demo Database
+Below is a selection from the Customers table used in the examples:
+
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
+1
+
+Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany
+2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda. de la Constitución 2222	México D.F.	05021	Mexico
+3	Antonio Moreno Taquería	Antonio Moreno	Mataderos 2312	México D.F.	05023	Mexico
+4
+
+Around the Horn	Thomas Hardy	120 Hanover Sq.	London	WA1 1DP	UK
+5	Berglunds snabbköp	Christina Berglund	Berguvsvägen 8	Luleå	S-958 22	Sweden
+Using the % Wildcard
+The % wildcard represents any number of characters, even zero characters.
+
+Example
+Return all customers that ends with the pattern 'es':
+
+SELECT * FROM Customers
+WHERE CustomerName LIKE '%es';
+Example
+Return all customers that contains the pattern 'mer':
+
+SELECT * FROM Customers
+WHERE CustomerName LIKE '%mer%';
+Using the _ Wildcard
+The _ wildcard represents a single character.
+
+It can be any character or number, but each _ represents one, and only one, character.
+
+Example
+Return all customers with a City starting with any character, followed by "ondon":
+
+SELECT * FROM Customers
+WHERE City LIKE '_ondon';
+Example
+Return all customers with a City starting with "L", followed by any 3 characters, ending with "on":
+
+SELECT * FROM Customers
+WHERE City LIKE 'L___on';
+Using the [] Wildcard
+The [] wildcard returns a result if any of the characters inside gets a match.
+
+Example
+Return all customers starting with either "b", "s", or "p":
+
+SELECT * FROM Customers
+WHERE CustomerName LIKE '[bsp]%';
+Using the - Wildcard
+The - wildcard allows you to specify a range of characters inside the [] wildcard.
+
+Example
+Return all customers starting with "a", "b", "c", "d", "e" or "f":
+
+SELECT * FROM Customers
+WHERE CustomerName LIKE '[a-f]%';
+Combine Wildcards
+Any wildcard, like % and _ , can be used in combination with other wildcards.
+
+Example
+Return all customers that starts with "a" and are at least 3 characters in length:
+
+SELECT * FROM Customers
+WHERE CustomerName LIKE 'a__%';
+Example
+Return all customers that have "r" in the second position:
+
+SELECT * FROM Customers
+WHERE CustomerName LIKE '_r%';
+Without Wildcard
+If no wildcard is specified, the phrase has to have an exact match to return a result.
+
+Example
+Return all customers from Spain:
+
+SELECT * FROM Customers
+WHERE Country LIKE 'Spain';
+Microsoft Access Wildcards
+The Microsoft Access Database has some other wildcards:
+
+Symbol	Description	Example
+*	Represents zero or more characters	bl* finds bl, black, blue, and blob
+?	Represents a single character	h?t finds hot, hat, and hit
+[]	Represents any single character within the brackets	h[oa]t finds hot and hat, but not hit
+!	Represents any character not in the brackets	h[!oa]t finds hit, but not hot and hat
+-	Represents any single character within the specified range	c[a-b]t finds cat and cbt
+#	Represents any single numeric character	2#5 finds 205, 215, 225, 235, 245, 255, 265, 275, 285, and 295
+
+
+--------------------------------------------------------------------------
+
+
+SQL IN Operator
+The SQL IN Operator
+The IN operator allows you to specify multiple values in a WHERE clause.
+
+The IN operator is a shorthand for multiple OR conditions.
+
+Example
+Return all customers from 'Germany', 'France', or 'UK'
+
+SELECT * FROM Customers
+WHERE Country IN ('Germany', 'France', 'UK');
+Syntax
+SELECT column_name(s)
+FROM table_name
+WHERE column_name IN (value1, value2, ...);
+
+Demo Database
+Below is a selection from the Customers table used in the examples:
+
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
+1
+
+Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany
+2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda. de la Constitución 2222	México D.F.	05021	Mexico
+3	Antonio Moreno Taquería	Antonio Moreno	Mataderos 2312	México D.F.	05023	Mexico
+4
+
+Around the Horn	Thomas Hardy	120 Hanover Sq.	London	WA1 1DP	UK
+5	Berglunds snabbköp	Christina Berglund	Berguvsvägen 8	Luleå	S-958 22	Sweden
+NOT IN
+By using the NOT keyword in front of the IN operator, you return all records that are NOT any of the values in the list.
+
+Example
+Return all customers that are NOT from 'Germany', 'France', or 'UK':
+
+SELECT * FROM Customers
+WHERE Country NOT IN ('Germany', 'France', 'UK');
+IN (SELECT)
+You can also use IN with a subquery in the WHERE clause.
+
+With a subquery you can return all records from the main query that are present in the result of the subquery.
+
+Example
+Return all customers that have an order in the Orders table:
+
+SELECT * FROM Customers
+WHERE CustomerID IN (SELECT CustomerID FROM Orders);
+NOT IN (SELECT)
+The result in the example above returned 74 records, that means that there are 17 customers that haven't placed any orders.
+
+Let us check if that is correct, by using the NOT IN operator.
+
+Example
+Return all customers that have NOT placed any orders in the Orders table:
+
+SELECT * FROM Customers
+WHERE CustomerID NOT IN (SELECT CustomerID FROM Orders);
+
+
+--------------------------------------------------------------------------------
+
+
+SQL BETWEEN Operator
+The SQL BETWEEN Operator
+The BETWEEN operator selects values within a given range. The values can be numbers, text, or dates.
+
+The BETWEEN operator is inclusive: begin and end values are included. 
+
+Example
+Selects all products with a price between 10 and 20:
+
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20;
+Syntax
+SELECT column_name(s)
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
+
+Demo Database
+Below is a selection from the Products table used in the examples:
+
+ProductID	ProductName	SupplierID	CategoryID	Unit	Price
+1	Chais	1	1	10 boxes x 20 bags	18
+2	Chang	1	1	24 - 12 oz bottles	19
+3	Aniseed Syrup	1	2	12 - 550 ml bottles	10
+4	Chef Anton's Cajun Seasoning	2	2	48 - 6 oz jars	22
+5	Chef Anton's Gumbo Mix	2	2	36 boxes	21.35
+NOT BETWEEN
+To display the products outside the range of the previous example, use NOT BETWEEN:
+
+Example
+SELECT * FROM Products
+WHERE Price NOT BETWEEN 10 AND 20;
+BETWEEN with IN
+The following SQL statement selects all products with a price between 10 and 20. In addition, the CategoryID must be either 1,2, or 3:
+
+Example
+SELECT * FROM Products
+WHERE Price BETWEEN 10 AND 20
+AND CategoryID IN (1,2,3);
+BETWEEN Text Values
+The following SQL statement selects all products with a ProductName alphabetically between Carnarvon Tigers and Mozzarella di Giovanni:
+
+Example
+SELECT * FROM Products
+WHERE ProductName BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'
+ORDER BY ProductName;
+The following SQL statement selects all products with a ProductName between Carnarvon Tigers and Chef Anton's Cajun Seasoning:
+
+Example
+SELECT * FROM Products
+WHERE ProductName BETWEEN "Carnarvon Tigers" AND "Chef Anton's Cajun Seasoning"
+ORDER BY ProductName;
+NOT BETWEEN Text Values
+The following SQL statement selects all products with a ProductName not between Carnarvon Tigers and Mozzarella di Giovanni:
+
+Example
+SELECT * FROM Products
+WHERE ProductName NOT BETWEEN 'Carnarvon Tigers' AND 'Mozzarella di Giovanni'
+ORDER BY ProductName;
+BETWEEN Dates
+The following SQL statement selects all orders with an OrderDate between '01-July-1996' and '31-July-1996':
+
+Example
+SELECT * FROM Orders
+WHERE OrderDate BETWEEN #07/01/1996# AND #07/31/1996#;
+OR:
+
+Example
+SELECT * FROM Orders
+WHERE OrderDate BETWEEN '1996-07-01' AND '1996-07-31';
+Sample Table
+Below is a selection from the Orders table used in the examples:
+
+OrderID	CustomerID	EmployeeID	OrderDate	ShipperID
+10248	90	5	7/4/1996	3
+10249	81	6	7/5/1996	1
+10250	34	4	7/8/1996	2
+10251	84	3	7/9/1996	1
+10252	76	4	7/10/1996	2
+
+----------------------------------------------------------------------------------------------------------------------
+
+SQL Aliases
+SQL aliases are used to give a table, or a column in a table, a temporary name.
+
+Aliases are often used to make column names more readable.
+
+An alias only exists for the duration of that query.
+
+An alias is created with the AS keyword.
+
+Example
+SELECT CustomerID AS ID
+FROM Customers;
+AS is Optional
+Actually, in most database languages, you can skip the AS keyword and get the same result:
+
+Example
+SELECT CustomerID ID
+FROM Customers;
+Syntax
+When alias is used on column:
+
+SELECT column_name AS alias_name
+FROM table_name;
+
+When alias is used on table:
+
+SELECT column_name(s)
+FROM table_name AS alias_name;
+
+Demo Database
+Below is a selection from the Customers and Orders tables used in the examples:
+
+Customers
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
+1
+
+Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany
+2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda. de la Constitución 2222	México D.F.	05021	Mexico
+3	Antonio Moreno Taquería	Antonio Moreno	Mataderos 2312	México D.F.	05023	Mexico
+Orders
+OrderID	CustomerID	EmployeeID	OrderDate	ShipperID
+10248	90	5	7/4/1996	3
+10249	81	6	7/5/1996	1
+10250	34	4	7/8/1996	2
+Alias for Columns
+The following SQL statement creates two aliases, one for the CustomerID column and one for the CustomerName column:
+
+Example
+SELECT CustomerID AS ID, CustomerName AS Customer
+FROM Customers;
+Using Aliases With a Space Character
+If you want your alias to contain one or more spaces, like "My Great Products", surround your alias with square brackets or double quotes.
+
+Example
+Using [square brackets] for aliases with space characters:
+
+SELECT ProductName AS [My Great Products]
+FROM Products;
+Example
+Using "double quotes" for aliases with space characters:
+
+SELECT ProductName AS "My Great Products"
+FROM Products;
+Note: Some database systems allows both [] and "", and some only allows one of them.
+
+Concatenate Columns
+The following SQL statement creates an alias named "Address" that combine four columns (Address, PostalCode, City and Country):
+
+Example
+SELECT CustomerName, Address + ', ' + PostalCode + ' ' + City + ', ' + Country AS Address
+FROM Customers;
+Note: To get the SQL statement above to work in MySQL use the following:
+
+MySQL Example
+SELECT CustomerName, CONCAT(Address,', ',PostalCode,', ',City,', ',Country) AS Address
+FROM Customers;
+Note: To get the SQL statement above to work in Oracle use the following:
+
+Oracle Example
+SELECT CustomerName, (Address || ', ' || PostalCode || ' ' || City || ', ' || Country) AS Address
+FROM Customers;
+Alias for Tables
+The same rules applies when you want to use an alias for a table.
+
+Example
+Refer to the Customers table as Persons instead:
+
+SELECT * FROM Customers AS Persons;
+It might seem useless to use aliases on tables, but when you are using more than one table in your queries, it can make the SQL statements shorter.
+
+The following SQL statement selects all the orders from the customer with CustomerID=4 (Around the Horn). We use the "Customers" and "Orders" tables, and give them the table aliases of "c" and "o" respectively (Here we use aliases to make the SQL shorter):
+
+Example
+SELECT o.OrderID, o.OrderDate, c.CustomerName
+FROM Customers AS c, Orders AS o
+WHERE c.CustomerName='Around the Horn' AND c.CustomerID=o.CustomerID;
+The following SQL statement is the same as above, but without aliases:
+
+Example
+SELECT Orders.OrderID, Orders.OrderDate, Customers.CustomerName
+FROM Customers, Orders
+WHERE Customers.CustomerName='Around the Horn' AND Customers.CustomerID=Orders.CustomerID;
+Aliases can be useful when:
+
+There are more than one table involved in a query
+Functions are used in the query
+Column names are big or not very readable
+Two or more columns are combined together
+
+----------------------------------------------------------------------------------------------
+
+MOST IMPORTANT :::::
+
+SQL Joins
+SQL JOIN
+A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+
+Let's look at a selection from the "Orders" table:
+
+OrderID	CustomerID	OrderDate
+10308	2	1996-09-18
+10309	37	1996-09-19
+10310	77	1996-09-20
+Then, look at a selection from the "Customers" table:
+
+CustomerID	CustomerName	ContactName	Country
+1	Alfreds Futterkiste	Maria Anders	Germany
+2	Ana Trujillo Emparedados y helados	Ana Trujillo	Mexico
+3	Antonio Moreno Taquería	Antonio Moreno	Mexico
+Notice that the "CustomerID" column in the "Orders" table refers to the "CustomerID" in the "Customers" table. The relationship between the two tables above is the "CustomerID" column.
+
+Then, we can create the following SQL statement (that contains an INNER JOIN), that selects records that have matching values in both tables:
+
+Example
+SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
+and it will produce something like this:
+
+OrderID	CustomerName	OrderDate
+10308	Ana Trujillo Emparedados y helados	9/18/1996
+10365	Antonio Moreno Taquería	11/27/1996
+10383	Around the Horn	12/16/1996
+10355	Around the Horn	11/15/1996
+10278	Berglunds snabbköp	8/12/1996
+Different Types of SQL JOINs
+Here are the different types of the JOINs in SQL:
+
+(INNER) JOIN: Returns records that have matching values in both tables
+LEFT (OUTER) JOIN: Returns all records from the left table, and the matched records from the right table
+RIGHT (OUTER) JOIN: Returns all records from the right table, and the matched records from the left table
+FULL (OUTER) JOIN: Returns all records when there is a match in either left or right table
+SQL INNER JOIN  SQL LEFT JOIN  SQL RIGHT JOIN  SQL FULL OUTER JOIN
+
+------
+SQL INNER JOIN
+INNER JOIN
+The INNER JOIN keyword selects records that have matching values in both tables.
+
+Let's look at a selection of the Products table:
+
+ProductID	ProductName	CategoryID	Price
+1	Chais	1	18
+2	Chang	1	19
+3	Aniseed Syrup	2	10
+And a selection of the Categories table:
+
+CategoryID	CategoryName	Description
+1	Beverages	Soft drinks, coffees, teas, beers, and ales
+2	Condiments	Sweet and savory sauces, relishes, spreads, and seasonings
+3	Confections	Desserts, candies, and sweet breads
+We will join the Products table with the Categories table, by using the CategoryID field from both tables:
+
+Example
+Join Products and Categories with the INNER JOIN keyword:
+
+SELECT ProductID, ProductName, CategoryName
+FROM Products
+INNER JOIN Categories ON Products.CategoryID = Categories.CategoryID;
+SQL INNER JOIN
+
+Note: The INNER JOIN keyword returns only rows with a match in both tables. Which means that if you have a product with no CategoryID, or with a CategoryID that is not present in the Categories table, that record would not be returned in the result.
+
+Syntax
+SELECT column_name(s)
+FROM table1
+INNER JOIN table2
+ON table1.column_name = table2.column_name;
+
+Naming the Columns
+It is a good practice to include the table name when specifying columns in the SQL statement.
+
+Example
+Specify the table names:
+
+SELECT Products.ProductID, Products.ProductName, Categories.CategoryName
+FROM Products
+INNER JOIN Categories ON Products.CategoryID = Categories.CategoryID;
+The example above works without specifying table names, because none of the specified column names are present in both tables. If you try to include CategoryID in the SELECT statement, you will get an error if you do not specify the table name (because CategoryID is present in both tables).
+
+JOIN or INNER JOIN
+JOIN and INNER JOIN will return the same result.
+
+INNER is the default join type for JOIN, so when you write JOIN the parser actually writes INNER JOIN.
+
+Example
+JOIN is the same as INNER JOIN:
+
+SELECT Products.ProductID, Products.ProductName, Categories.CategoryName
+FROM Products
+JOIN Categories ON Products.CategoryID = Categories.CategoryID;
+JOIN Three Tables
+The following SQL statement selects all orders with customer and shipper information:
+
+Example
+SELECT Orders.OrderID, Customers.CustomerName, Shippers.ShipperName
+FROM ((Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID)
+INNER JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID);
+
+
+--------
+
+SQL LEFT JOIN Keyword
+SQL LEFT JOIN Keyword
+The LEFT JOIN keyword returns all records from the left table (table1), and the matching records from the right table (table2). The result is 0 records from the right side, if there is no match.
+
+LEFT JOIN Syntax
+SELECT column_name(s)
+FROM table1
+LEFT JOIN table2
+ON table1.column_name = table2.column_name;
+Note: In some databases LEFT JOIN is called LEFT OUTER JOIN.
+
+SQL LEFT JOIN
+
+Demo Database
+In this tutorial we will use the well-known Northwind sample database.
+
+Below is a selection from the "Customers" table:
+
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
+1       Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany
+2	    Ana Trujillo Emparedados y helados	Ana Trujillo	Avda. de la Constitución 2222	México D.F.	05021	Mexico
+3	    Antonio Moreno Taquería	Antonio Moreno	Mataderos 2312	México D.F.	05023	Mexico
+And a selection from the "Orders" table:
+
+OrderID	CustomerID	EmployeeID	OrderDate	ShipperID
+10308	2	7	1996-09-18	3
+10309	37	3	1996-09-19	1
+10310	77	8	1996-09-20	2
+SQL LEFT JOIN Example
+The following SQL statement will select all customers, and any orders they might have:
+
+Example
+SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID
+ORDER BY Customers.CustomerName;
+Note: The LEFT JOIN keyword returns all records from the left table (Customers), even if there are no matches in the right table (Orders).
+
+-----------
+
+SQL RIGHT JOIN Keyword
+SQL RIGHT JOIN Keyword
+The RIGHT JOIN keyword returns all records from the right table (table2), and the matching records from the left table (table1). The result is 0 records from the left side, if there is no match.
+
+RIGHT JOIN Syntax
+SELECT column_name(s)
+FROM table1
+RIGHT JOIN table2
+ON table1.column_name = table2.column_name;
+Note: In some databases RIGHT JOIN is called RIGHT OUTER JOIN.
+
+SQL RIGHT JOIN
+
+Demo Database
+In this tutorial we will use the well-known Northwind sample database.
+
+Below is a selection from the "Orders" table:
+
+OrderID	CustomerID	EmployeeID	OrderDate	ShipperID
+10308	2	7	1996-09-18	3
+10309	37	3	1996-09-19	1
+10310	77	8	1996-09-20	2
+And a selection from the "Employees" table:
+
+EmployeeID	LastName	FirstName	BirthDate	Photo
+1	Davolio	Nancy	12/8/1968	EmpID1.pic
+2	Fuller	Andrew	2/19/1952	EmpID2.pic
+3	Leverling	Janet	8/30/1963	EmpID3.pic
+SQL RIGHT JOIN Example
+The following SQL statement will return all employees, and any orders they might have placed:
+
+Example
+SELECT Orders.OrderID, Employees.LastName, Employees.FirstName
+FROM Orders
+RIGHT JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
+ORDER BY Orders.OrderID;
+Note: The RIGHT JOIN keyword returns all records from the right table (Employees), even if there are no matches in the left table (Orders).
+
+-----------
+
+SQL FULL OUTER JOIN Keyword
+SQL FULL OUTER JOIN Keyword
+The FULL OUTER JOIN keyword returns all records when there is a match in left (table1) or right (table2) table records.
+
+Tip: FULL OUTER JOIN and FULL JOIN are the same.
+
+FULL OUTER JOIN Syntax
+SELECT column_name(s)
+FROM table1
+FULL OUTER JOIN table2
+ON table1.column_name = table2.column_name
+WHERE condition;
+SQL FULL OUTER JOIN
+
+Note: FULL OUTER JOIN can potentially return very large result-sets!
+
+Demo Database
+In this tutorial we will use the well-known Northwind sample database.
+
+Below is a selection from the "Customers" table:
+
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
+1
+
+Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany
+2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda. de la Constitución 2222	México D.F.	05021	Mexico
+3	Antonio Moreno Taquería	Antonio Moreno	Mataderos 2312	México D.F.	05023	Mexico
+And a selection from the "Orders" table:
+
+OrderID	CustomerID	EmployeeID	OrderDate	ShipperID
+10308	2	7	1996-09-18	3
+10309	37	3	1996-09-19	1
+10310	77	8	1996-09-20	2
+SQL FULL OUTER JOIN Example
+The following SQL statement selects all customers, and all orders:
+
+SELECT Customers.CustomerName, Orders.OrderID
+FROM Customers
+FULL OUTER JOIN Orders ON Customers.CustomerID=Orders.CustomerID
+ORDER BY Customers.CustomerName;
+A selection from the result set may look like this:
+
+CustomerName	OrderID
+Null	10309
+Null	10310
+Alfreds Futterkiste	Null
+Ana Trujillo Emparedados y helados	10308
+Antonio Moreno Taquería	Null
+Note: The FULL OUTER JOIN keyword returns all matching records from both tables whether the other table matches or not. So, if there are rows in "Customers" that do not have matches in "Orders", or if there are rows in "Orders" that do not have matches in "Customers", those rows will be listed as well.
+
+-------------
+SQL Self Join
+SQL Self Join
+A self join is a regular join, but the table is joined with itself.
+
+Self Join Syntax
+SELECT column_name(s)
+FROM table1 T1, table1 T2
+WHERE condition;
+T1 and T2 are different table aliases for the same table.
+
+Demo Database
+In this tutorial we will use the well-known Northwind sample database.
+
+Below is a selection from the "Customers" table:
+
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
+1
+
+Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany
+2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda. de la Constitución 2222	México D.F.	05021	Mexico
+3	Antonio Moreno Taquería	Antonio Moreno	Mataderos 2312	México D.F.	05023	Mexico
+SQL Self Join Example
+The following SQL statement matches customers that are from the same city:
+
+Example
+SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City
+FROM Customers A, Customers B
+WHERE A.CustomerID <> B.CustomerID
+AND A.City = B.City
+ORDER BY A.City;
+
+------------------------------------------------------------------------------------------------------------
+SQL UNION Operator
+The SQL UNION Operator
+The UNION operator is used to combine the result-set of two or more SELECT statements.
+
+Every SELECT statement within UNION must have the same number of columns
+The columns must also have similar data types
+The columns in every SELECT statement must also be in the same order
+UNION Syntax
+SELECT column_name(s) FROM table1
+UNION
+SELECT column_name(s) FROM table2;
+UNION ALL Syntax
+The UNION operator selects only distinct values by default. To allow duplicate values, use UNION ALL:
+
+SELECT column_name(s) FROM table1
+UNION ALL
+SELECT column_name(s) FROM table2;
+Note: The column names in the result-set are usually equal to the column names in the first SELECT statement.
+
+Demo Database
+In this tutorial we will use the well-known Northwind sample database.
+
+Below is a selection from the "Customers" table:
+
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
+1
+
+Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany
+2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda. de la Constitución 2222	México D.F.	05021	Mexico
+3	Antonio Moreno Taquería	Antonio Moreno	Mataderos 2312	México D.F.	05023	Mexico
+And a selection from the "Suppliers" table:
+
+SupplierID	SupplierName	ContactName	Address	City	PostalCode	Country
+1	Exotic Liquid	Charlotte Cooper	49 Gilbert St.	London	EC1 4SD	UK
+2	New Orleans Cajun Delights	Shelley Burke	P.O. Box 78934	New Orleans	70117	USA
+3	Grandma Kelly's Homestead	Regina Murphy	707 Oxford Rd.	Ann Arbor	48104	USA
+SQL UNION Example
+The following SQL statement returns the cities (only distinct values) from both the "Customers" and the "Suppliers" table:
+
+Example
+SELECT City FROM Customers
+UNION
+SELECT City FROM Suppliers
+ORDER BY City;
+Note: If some customers or suppliers have the same city, each city will only be listed once, because UNION selects only distinct values. Use UNION ALL to also select duplicate values!
+
+SQL UNION ALL Example
+The following SQL statement returns the cities (duplicate values also) from both the "Customers" and the "Suppliers" table:
+
+Example
+SELECT City FROM Customers
+UNION ALL
+SELECT City FROM Suppliers
+ORDER BY City;
+SQL UNION With WHERE
+The following SQL statement returns the German cities (only distinct values) from both the "Customers" and the "Suppliers" table:
+
+Example
+SELECT City, Country FROM Customers
+WHERE Country='Germany'
+UNION
+SELECT City, Country FROM Suppliers
+WHERE Country='Germany'
+ORDER BY City;
+SQL UNION ALL With WHERE
+The following SQL statement returns the German cities (duplicate values also) from both the "Customers" and the "Suppliers" table:
+
+Example
+SELECT City, Country FROM Customers
+WHERE Country='Germany'
+UNION ALL
+SELECT City, Country FROM Suppliers
+WHERE Country='Germany'
+ORDER BY City;
+Another UNION Example
+The following SQL statement lists all customers and suppliers:
+
+Example
+SELECT 'Customer' AS Type, ContactName, City, Country
+FROM Customers
+UNION
+SELECT 'Supplier', ContactName, City, Country
+FROM Suppliers;
+Notice the "AS Type" above - it is an alias. SQL Aliases are used to give a table or a column a temporary name. An alias only exists for the duration of the query. So, here we have created a temporary column named "Type", that list whether the contact person is a "Customer" or a "Supplier".
+
+
+-------------------------------------------------------------------------------------------
+SQL GROUP BY Statement
+The SQL GROUP BY Statement
+The GROUP BY statement groups rows that have the same values into summary rows, like "find the number of customers in each country".
+
+The GROUP BY statement is often used with aggregate functions (COUNT(), MAX(), MIN(), SUM(), AVG()) to group the result-set by one or more columns.
+
+GROUP BY Syntax
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+ORDER BY column_name(s);
+Demo Database
+Below is a selection from the "Customers" table in the Northwind sample database:
+
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
+1
+
+Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany
+2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda. de la Constitución 2222	México D.F.	05021	Mexico
+3	Antonio Moreno Taquería	Antonio Moreno	Mataderos 2312	México D.F.	05023	Mexico
+4
+
+Around the Horn	Thomas Hardy	120 Hanover Sq.	London	WA1 1DP	UK
+5	Berglunds snabbköp	Christina Berglund	Berguvsvägen 8	Luleå	S-958 22	Sweden
+SQL GROUP BY Examples
+The following SQL statement lists the number of customers in each country:
+
+ExampleGet your own SQL Server
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country;
+The following SQL statement lists the number of customers in each country, sorted high to low:
+
+Example
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+ORDER BY COUNT(CustomerID) DESC;
+Demo Database
+Below is a selection from the "Orders" table in the Northwind sample database:
+
+OrderID	CustomerID	EmployeeID	OrderDate	ShipperID
+10248	90	5	1996-07-04	3
+10249	81	6	1996-07-05	1
+10250	34	4	1996-07-08	2
+And a selection from the "Shippers" table:
+
+ShipperID	ShipperName
+1	Speedy Express
+2	United Package
+3	Federal Shipping
+GROUP BY With JOIN Example
+The following SQL statement lists the number of orders sent by each shipper:
+
+Example
+SELECT Shippers.ShipperName, COUNT(Orders.OrderID) AS NumberOfOrders FROM Orders
+LEFT JOIN Shippers ON Orders.ShipperID = Shippers.ShipperID
+GROUP BY ShipperName;
+
+
+------------------------------------------------------------------------------------------------------------------------------
+SQL HAVING Clause
+The SQL HAVING Clause
+The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.
+
+HAVING Syntax
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+HAVING condition
+ORDER BY column_name(s);
+Demo Database
+Below is a selection from the "Customers" table in the Northwind sample database:
+
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
+1
+
+Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany
+2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda. de la Constitución 2222	México D.F.	05021	Mexico
+3	Antonio Moreno Taquería	Antonio Moreno	Mataderos 2312	México D.F.	05023	Mexico
+4
+
+Around the Horn	Thomas Hardy	120 Hanover Sq.	London	WA1 1DP	UK
+5	Berglunds snabbköp	Christina Berglund	Berguvsvägen 8	Luleå	S-958 22	Sweden
+SQL HAVING Examples
+The following SQL statement lists the number of customers in each country. Only include countries with more than 5 customers:
+
+ExampleGet your own SQL Server
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;
+The following SQL statement lists the number of customers in each country, sorted high to low (Only include countries with more than 5 customers):
+
+Example
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5
+ORDER BY COUNT(CustomerID) DESC;
+Demo Database
+Below is a selection from the "Orders" table in the Northwind sample database:
+
+OrderID	CustomerID	EmployeeID	OrderDate	ShipperID
+10248	90	5	1996-07-04	3
+10249	81	6	1996-07-05	1
+10250	34	4	1996-07-08	2
+And a selection from the "Employees" table:
+
+EmployeeID	LastName	FirstName	BirthDate	Photo	Notes
+1	Davolio	Nancy	1968-12-08	EmpID1.pic	Education includes a BA....
+2	Fuller	Andrew	1952-02-19	EmpID2.pic	Andrew received his BTS....
+3	Leverling	Janet	1963-08-30	EmpID3.pic	Janet has a BS degree....
+More HAVING Examples
+The following SQL statement lists the employees that have registered more than 10 orders:
+
+Example
+SELECT Employees.LastName, COUNT(Orders.OrderID) AS NumberOfOrders
+FROM (Orders
+INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID)
+GROUP BY LastName
+HAVING COUNT(Orders.OrderID) > 10;
+The following SQL statement lists if the employees "Davolio" or "Fuller" have registered more than 25 orders:
+
+Example
+SELECT Employees.LastName, COUNT(Orders.OrderID) AS NumberOfOrders
+FROM Orders
+INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
+WHERE LastName = 'Davolio' OR LastName = 'Fuller'
+GROUP BY LastName
+HAVING COUNT(Orders.OrderID) > 25;
+
+
+----------------------------------------------------------------------------------
+
+
+SQL HAVING Clause
+The SQL HAVING Clause
+The HAVING clause was added to SQL because the WHERE keyword cannot be used with aggregate functions.
+
+HAVING Syntax
+SELECT column_name(s)
+FROM table_name
+WHERE condition
+GROUP BY column_name(s)
+HAVING condition
+ORDER BY column_name(s);
+Demo Database
+Below is a selection from the "Customers" table in the Northwind sample database:
+
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
+1
+
+Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany
+2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda. de la Constitución 2222	México D.F.	05021	Mexico
+3	Antonio Moreno Taquería	Antonio Moreno	Mataderos 2312	México D.F.	05023	Mexico
+4
+
+Around the Horn	Thomas Hardy	120 Hanover Sq.	London	WA1 1DP	UK
+5	Berglunds snabbköp	Christina Berglund	Berguvsvägen 8	Luleå	S-958 22	Sweden
+SQL HAVING Examples
+The following SQL statement lists the number of customers in each country. Only include countries with more than 5 customers:
+
+ExampleGet your own SQL Server
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5;
+The following SQL statement lists the number of customers in each country, sorted high to low (Only include countries with more than 5 customers):
+
+Example
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country
+HAVING COUNT(CustomerID) > 5
+ORDER BY COUNT(CustomerID) DESC;
+Demo Database
+Below is a selection from the "Orders" table in the Northwind sample database:
+
+OrderID	CustomerID	EmployeeID	OrderDate	ShipperID
+10248	90	5	1996-07-04	3
+10249	81	6	1996-07-05	1
+10250	34	4	1996-07-08	2
+And a selection from the "Employees" table:
+
+EmployeeID	LastName	FirstName	BirthDate	Photo	Notes
+1	Davolio	Nancy	1968-12-08	EmpID1.pic	Education includes a BA....
+2	Fuller	Andrew	1952-02-19	EmpID2.pic	Andrew received his BTS....
+3	Leverling	Janet	1963-08-30	EmpID3.pic	Janet has a BS degree....
+More HAVING Examples
+The following SQL statement lists the employees that have registered more than 10 orders:
+
+Example
+SELECT Employees.LastName, COUNT(Orders.OrderID) AS NumberOfOrders
+FROM (Orders
+INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID)
+GROUP BY LastName
+HAVING COUNT(Orders.OrderID) > 10;
+The following SQL statement lists if the employees "Davolio" or "Fuller" have registered more than 25 orders:
+
+Example
+SELECT Employees.LastName, COUNT(Orders.OrderID) AS NumberOfOrders
+FROM Orders
+INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID
+WHERE LastName = 'Davolio' OR LastName = 'Fuller'
+GROUP BY LastName
+HAVING COUNT(Orders.OrderID) > 25;
 
 
 
+------------------------------------------------------------------------------------
+SQL EXISTS Operator
+The SQL EXISTS Operator
+The EXISTS operator is used to test for the existence of any record in a subquery.
+
+The EXISTS operator returns TRUE if the subquery returns one or more records.
+
+EXISTS Syntax
+SELECT column_name(s)
+FROM table_name
+WHERE EXISTS
+(SELECT column_name FROM table_name WHERE condition);
+Demo Database
+Below is a selection from the "Products" table in the Northwind sample database:
+
+ProductID	ProductName	SupplierID	CategoryID	Unit	Price
+1	Chais	1	1	10 boxes x 20 bags	18
+2	Chang	1	1	24 - 12 oz bottles	19
+3	Aniseed Syrup	1	2	12 - 550 ml bottles	10
+4	Chef Anton's Cajun Seasoning	2	2	48 - 6 oz jars	22
+5	Chef Anton's Gumbo Mix	2	2	36 boxes	21.35
+And a selection from the "Suppliers" table:
+
+SupplierID	SupplierName	ContactName	Address	City	PostalCode	Country
+1	Exotic Liquid	Charlotte Cooper	49 Gilbert St.	London	EC1 4SD	UK
+2	New Orleans Cajun Delights	Shelley Burke	P.O. Box 78934	New Orleans	70117	USA
+3	Grandma Kelly's Homestead	Regina Murphy	707 Oxford Rd.	Ann Arbor	48104	USA
+4	Tokyo Traders	Yoshi Nagase	9-8 Sekimai Musashino-shi	Tokyo	100	Japan
+SQL EXISTS Examples
+The following SQL statement returns TRUE and lists the suppliers with a product price less than 20:
+
+ExampleGet your own SQL Server
+SELECT SupplierName
+FROM Suppliers
+WHERE EXISTS (SELECT ProductName FROM Products WHERE Products.SupplierID = Suppliers.supplierID AND Price < 20);
+The following SQL statement returns TRUE and lists the suppliers with a product price equal to 22:
+
+Example
+SELECT SupplierName
+FROM Suppliers
+WHERE EXISTS (SELECT ProductName FROM Products WHERE Products.SupplierID = Suppliers.supplierID AND Price = 22);
+
+
+-----------------------------------------------------------------------------------------------------
+
+
+SQL ANY and ALL Operators
+The SQL ANY and ALL Operators
+The ANY and ALL operators allow you to perform a comparison between a single column value and a range of other values.
+
+The SQL ANY Operator
+The ANY operator:
+
+returns a boolean value as a result
+returns TRUE if ANY of the subquery values meet the condition
+ANY means that the condition will be true if the operation is true for any of the values in the range.
+
+ANY Syntax
+SELECT column_name(s)
+FROM table_name
+WHERE column_name operator ANY
+  (SELECT column_name
+  FROM table_name
+  WHERE condition);
+Note: The operator must be a standard comparison operator (=, <>, !=, >, >=, <, or <=).
+
+The SQL ALL Operator
+The ALL operator:
+
+returns a boolean value as a result
+returns TRUE if ALL of the subquery values meet the condition
+is used with SELECT, WHERE and HAVING statements
+ALL means that the condition will be true only if the operation is true for all values in the range. 
+
+ALL Syntax With SELECT
+SELECT ALL column_name(s)
+FROM table_name
+WHERE condition;
+ALL Syntax With WHERE or HAVING
+SELECT column_name(s)
+FROM table_name
+WHERE column_name operator ALL
+  (SELECT column_name
+  FROM table_name
+  WHERE condition);
+Note: The operator must be a standard comparison operator (=, <>, !=, >, >=, <, or <=).
+
+Demo Database
+Below is a selection from the "Products" table in the Northwind sample database:
+
+ProductID	ProductName	SupplierID	CategoryID	Unit	Price
+1	Chais	1	1	10 boxes x 20 bags	18
+2	Chang	1	1	24 - 12 oz bottles	19
+3	Aniseed Syrup	1	2	12 - 550 ml bottles	10
+4	Chef Anton's Cajun Seasoning	2	2	48 - 6 oz jars	22
+5	Chef Anton's Gumbo Mix	2	2	36 boxes	21.35
+6	Grandma's Boysenberry Spread	3	2	12 - 8 oz jars	25
+7	Uncle Bob's Organic Dried Pears	3	7	12 - 1 lb pkgs.	30
+8	Northwoods Cranberry Sauce	3	2	12 - 12 oz jars	40
+9	Mishi Kobe Niku	4	6	18 - 500 g pkgs.	97
+And a selection from the "OrderDetails" table:
+
+OrderDetailID	OrderID	ProductID	Quantity
+1	10248	11	12
+2	10248	42	10
+3	10248	72	5
+4	10249	14	9
+5	10249	51	40
+6	10250	41	10
+7	10250	51	35
+8	10250	65	15
+9	10251	22	6
+10	10251	57	15
+SQL ANY Examples
+The following SQL statement lists the ProductName if it finds ANY records in the OrderDetails table has Quantity equal to 10 (this will return TRUE because the Quantity column has some values of 10):
+
+ExampleGet your own SQL Server
+SELECT ProductName
+FROM Products
+WHERE ProductID = ANY
+  (SELECT ProductID
+  FROM OrderDetails
+  WHERE Quantity = 10);
+The following SQL statement lists the ProductName if it finds ANY records in the OrderDetails table has Quantity larger than 99 (this will return TRUE because the Quantity column has some values larger than 99):
+
+Example
+SELECT ProductName
+FROM Products
+WHERE ProductID = ANY
+  (SELECT ProductID
+  FROM OrderDetails
+  WHERE Quantity > 99);
+The following SQL statement lists the ProductName if it finds ANY records in the OrderDetails table has Quantity larger than 1000 (this will return FALSE because the Quantity column has no values larger than 1000):
+
+Example
+SELECT ProductName
+FROM Products
+WHERE ProductID = ANY
+  (SELECT ProductID
+  FROM OrderDetails
+  WHERE Quantity > 1000);
+SQL ALL Examples
+The following SQL statement lists ALL the product names:
+
+Example
+SELECT ALL ProductName
+FROM Products
+WHERE TRUE;
+The following SQL statement lists the ProductName if ALL the records in the OrderDetails table has Quantity equal to 10. This will of course return FALSE because the Quantity column has many different values (not only the value of 10):
+
+Example
+SELECT ProductName
+FROM Products
+WHERE ProductID = ALL
+  (SELECT ProductID
+  FROM OrderDetails
+  WHERE Quantity = 10);
+
+----------------------------------------------------------------------------------
+
+
+SQL SELECT INTO Statement
+The SQL SELECT INTO Statement
+The SELECT INTO statement copies data from one table into a new table.
+
+SELECT INTO Syntax
+Copy all columns into a new table:
+
+SELECT *
+INTO newtable [IN externaldb]
+FROM oldtable
+WHERE condition;
+Copy only some columns into a new table:
+
+SELECT column1, column2, column3, ...
+INTO newtable [IN externaldb]
+FROM oldtable
+WHERE condition;
+The new table will be created with the column-names and types as defined in the old table. You can create new column names using the AS clause.
+
+SQL SELECT INTO Examples
+The following SQL statement creates a backup copy of Customers:
+
+SELECT * INTO CustomersBackup2017
+FROM Customers;
+The following SQL statement uses the IN clause to copy the table into a new table in another database:
+
+SELECT * INTO CustomersBackup2017 IN 'Backup.mdb'
+FROM Customers;
+The following SQL statement copies only a few columns into a new table:
+
+SELECT CustomerName, ContactName INTO CustomersBackup2017
+FROM Customers;
+The following SQL statement copies only the German customers into a new table:
+
+SELECT * INTO CustomersGermany
+FROM Customers
+WHERE Country = 'Germany';
+The following SQL statement copies data from more than one table into a new table:
+
+SELECT Customers.CustomerName, Orders.OrderID
+INTO CustomersOrderBackup2017
+FROM Customers
+LEFT JOIN Orders ON Customers.CustomerID = Orders.CustomerID;
+Tip: SELECT INTO can also be used to create a new, empty table using the schema of another. Just add a WHERE clause that causes the query to return no data:
+
+SELECT * INTO newtable
+FROM oldtable
+WHERE 1 = 0;
+
+--------------------------------------------------------------------------------------------------
+
+SQL INSERT INTO SELECT Statement
+The SQL INSERT INTO SELECT Statement
+The INSERT INTO SELECT statement copies data from one table and inserts it into another table.
+
+The INSERT INTO SELECT statement requires that the data types in source and target tables match.
+
+Note: The existing records in the target table are unaffected.
+
+INSERT INTO SELECT Syntax
+Copy all columns from one table to another table:
+
+INSERT INTO table2
+SELECT * FROM table1
+WHERE condition;
+Copy only some columns from one table into another table:
+
+INSERT INTO table2 (column1, column2, column3, ...)
+SELECT column1, column2, column3, ...
+FROM table1
+WHERE condition;
+Demo Database
+In this tutorial we will use the well-known Northwind sample database.
+
+Below is a selection from the "Customers" table:
+
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
+1
+
+Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany
+2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda. de la Constitución 2222	México D.F.	05021	Mexico
+3	Antonio Moreno Taquería	Antonio Moreno	Mataderos 2312	México D.F.	05023	Mexico
+And a selection from the "Suppliers" table:
+
+SupplierID	SupplierName	ContactName	Address	City	Postal Code	Country
+1	Exotic Liquid	Charlotte Cooper	49 Gilbert St.	Londona	EC1 4SD	UK
+2	New Orleans Cajun Delights	Shelley Burke	P.O. Box 78934	New Orleans	70117	USA
+3	Grandma Kelly's Homestead	Regina Murphy	707 Oxford Rd.	Ann Arbor	48104	USA
+SQL INSERT INTO SELECT Examples
+ExampleGet your own SQL Server
+Copy "Suppliers" into "Customers" (the columns that are not filled with data, will contain NULL):
+
+INSERT INTO Customers (CustomerName, City, Country)
+SELECT SupplierName, City, Country FROM Suppliers;
+Example
+Copy "Suppliers" into "Customers" (fill all columns):
+
+INSERT INTO Customers (CustomerName, ContactName, Address, City, PostalCode, Country)
+SELECT SupplierName, ContactName, Address, City, PostalCode, Country FROM Suppliers;
+Example
+Copy only the German suppliers into "Customers":
+
+INSERT INTO Customers (CustomerName, City, Country)
+SELECT SupplierName, City, Country FROM Suppliers
+WHERE Country='Germany';
+
+------------------------------------------------------------------------------------------------------
+
+SQL CASE Expression
+The SQL CASE Expression
+The CASE expression goes through conditions and returns a value when the first condition is met (like an if-then-else statement). So, once a condition is true, it will stop reading and return the result. If no conditions are true, it returns the value in the ELSE clause.
+
+If there is no ELSE part and no conditions are true, it returns NULL.
+
+CASE Syntax
+CASE
+    WHEN condition1 THEN result1
+    WHEN condition2 THEN result2
+    WHEN conditionN THEN resultN
+    ELSE result
+END;
+Demo Database
+Below is a selection from the "OrderDetails" table in the Northwind sample database:
+
+OrderDetailID	OrderID	ProductID	Quantity
+1	10248	11	12
+2	10248	42	10
+3	10248	72	5
+4	10249	14	9
+5	10249	51	40
+SQL CASE Examples
+The following SQL goes through conditions and returns a value when the first condition is met:
+
+ExampleGet your own SQL Server
+SELECT OrderID, Quantity,
+CASE
+    WHEN Quantity > 30 THEN 'The quantity is greater than 30'
+    WHEN Quantity = 30 THEN 'The quantity is 30'
+    ELSE 'The quantity is under 30'
+END AS QuantityText
+FROM OrderDetails;
+The following SQL will order the customers by City. However, if City is NULL, then order by Country:
+
+Example
+SELECT CustomerName, City, Country
+FROM Customers
+ORDER BY
+(CASE
+    WHEN City IS NULL THEN Country
+    ELSE City
+END);
+
+
+----------------------------------------------------------------------------------------------------------------
+
+SQL NULL Functions
+SQL IFNULL(), ISNULL(), COALESCE(), and NVL() Functions
+Look at the following "Products" table:
+
+P_Id	ProductName	UnitPrice	UnitsInStock	UnitsOnOrder
+1	Jarlsberg	10.45	16	15
+2	Mascarpone	32.56	23	 
+3	Gorgonzola	15.67	9	20
+Suppose that the "UnitsOnOrder" column is optional, and may contain NULL values.
+
+Look at the following SELECT statement:
+
+SELECT ProductName, UnitPrice * (UnitsInStock + UnitsOnOrder)
+FROM Products;
+In the example above, if any of the "UnitsOnOrder" values are NULL, the result will be NULL.
+
+Solutions
+MySQL
+
+The MySQL IFNULL() function lets you return an alternative value if an expression is NULL:
+
+SELECT ProductName, UnitPrice * (UnitsInStock + IFNULL(UnitsOnOrder, 0))
+FROM Products;
+or we can use the COALESCE() function, like this:
+
+SELECT ProductName, UnitPrice * (UnitsInStock + COALESCE(UnitsOnOrder, 0))
+FROM Products;
+SQL Server
+
+The SQL Server ISNULL() function lets you return an alternative value when an expression is NULL:
+
+SELECT ProductName, UnitPrice * (UnitsInStock + ISNULL(UnitsOnOrder, 0))
+FROM Products;
+or we can use the COALESCE() function, like this:
+
+SELECT ProductName, UnitPrice * (UnitsInStock + COALESCE(UnitsOnOrder, 0))
+FROM Products;
+MS Access
+
+The MS Access IsNull() function returns TRUE (-1) if the expression is a null value, otherwise FALSE (0):
+
+SELECT ProductName, UnitPrice * (UnitsInStock + IIF(IsNull(UnitsOnOrder), 0, UnitsOnOrder))
+FROM Products;
+Oracle
+
+The Oracle NVL() function achieves the same result:
+
+SELECT ProductName, UnitPrice * (UnitsInStock + NVL(UnitsOnOrder, 0))
+FROM Products;
+or we can use the COALESCE() function, like this:
+
+SELECT ProductName, UnitPrice * (UnitsInStock + COALESCE(UnitsOnOrder, 0))
+FROM Products;
+
+
+--------------------------------------------------------------------------------------------------
+
+SQL Stored Procedures for SQL Server
+What is a Stored Procedure?
+A stored procedure is a prepared SQL code that you can save, so the code can be reused over and over again.
+
+So if you have an SQL query that you write over and over again, save it as a stored procedure, and then just call it to execute it.
+
+You can also pass parameters to a stored procedure, so that the stored procedure can act based on the parameter value(s) that is passed.
+
+Stored Procedure Syntax
+CREATE PROCEDURE procedure_name
+AS
+sql_statement
+GO;
+Execute a Stored Procedure
+EXEC procedure_name;
+Demo Database
+Below is a selection from the "Customers" table in the Northwind sample database:
+
+CustomerID	CustomerName	ContactName	Address	City	PostalCode	Country
+1
+
+Alfreds Futterkiste	Maria Anders	Obere Str. 57	Berlin	12209	Germany
+2	Ana Trujillo Emparedados y helados	Ana Trujillo	Avda. de la Constitución 2222	México D.F.	05021	Mexico
+3	Antonio Moreno Taquería	Antonio Moreno	Mataderos 2312	México D.F.	05023	Mexico
+4
+
+Around the Horn	Thomas Hardy	120 Hanover Sq.	London	WA1 1DP	UK
+5	Berglunds snabbköp	Christina Berglund	Berguvsvägen 8	Luleå	S-958 22	Sweden
+Stored Procedure Example
+The following SQL statement creates a stored procedure named "SelectAllCustomers" that selects all records from the "Customers" table:
+
+ExampleGet your own SQL Server
+CREATE PROCEDURE SelectAllCustomers
+AS
+SELECT * FROM Customers
+GO;
+Execute the stored procedure above as follows:
+
+Example
+EXEC SelectAllCustomers;
+Stored Procedure With One Parameter
+The following SQL statement creates a stored procedure that selects Customers from a particular City from the "Customers" table:
+
+Example
+CREATE PROCEDURE SelectAllCustomers @City nvarchar(30)
+AS
+SELECT * FROM Customers WHERE City = @City
+GO;
+Execute the stored procedure above as follows:
+
+Example
+EXEC SelectAllCustomers @City = 'London';
+Stored Procedure With Multiple Parameters
+Setting up multiple parameters is very easy. Just list each parameter and the data type separated by a comma as shown below.
+
+The following SQL statement creates a stored procedure that selects Customers from a particular City with a particular PostalCode from the "Customers" table:
+
+Example
+CREATE PROCEDURE SelectAllCustomers @City nvarchar(30), @PostalCode nvarchar(10)
+AS
+SELECT * FROM Customers WHERE City = @City AND PostalCode = @PostalCode
+GO;
+Execute the stored procedure above as follows:
+
+Example
+EXEC SelectAllCustomers @City = 'London', @PostalCode = 'WA1 1DP';
+
+
+---------------------------------------------------------------------------------------------------------
+
+
+SQL Comments
+SQL Comments
+Comments are used to explain sections of SQL statements, or to prevent execution of SQL statements.
+
+Note: Comments are not supported in Microsoft Access databases!
+
+Single Line Comments
+Single line comments start with --.
+
+Any text between -- and the end of the line will be ignored (will not be executed).
+
+The following example uses a single-line comment as an explanation:
+
+ExampleGet your own SQL Server
+-- Select all:
+SELECT * FROM Customers;
+The following example uses a single-line comment to ignore the end of a line:
+
+Example
+SELECT * FROM Customers -- WHERE City='Berlin';
+The following example uses a single-line comment to ignore a statement:
+
+Example
+-- SELECT * FROM Customers;
+SELECT * FROM Products;
+Multi-line Comments
+Multi-line comments start with /* and end with */.
+
+Any text between /* and */ will be ignored.
+
+The following example uses a multi-line comment as an explanation:
+
+Example
+/*Select all the columns
+of all the records
+in the Customers table:*/
+SELECT * FROM Customers;
+The following example uses a multi-line comment to ignore many statements:
+
+Example
+/*SELECT * FROM Customers;
+SELECT * FROM Products;
+SELECT * FROM Orders;
+SELECT * FROM Categories;*/
+SELECT * FROM Suppliers;
+To ignore just a part of a statement, also use the /* */ comment.
+
+The following example uses a comment to ignore part of a line:
+
+Example
+SELECT CustomerName, /*City,*/ Country FROM Customers;
+The following example uses a comment to ignore part of a statement:
+
+Example
+SELECT * FROM Customers WHERE (CustomerName LIKE 'L%'
+OR CustomerName LIKE 'R%' /*OR CustomerName LIKE 'S%'
+OR CustomerName LIKE 'T%'*/ OR CustomerName LIKE 'W%')
+AND Country='USA'
+ORDER BY CustomerName;
+
+-------------------------------------------------------------------------------------
+
+SQL Operators
+SQL Arithmetic Operators
+Operator	Description	Example
++	Add	
+-	Subtract	
+*	Multiply	
+/	Divide	
+%	Modulo	
+SQL Bitwise Operators
+Operator	Description
+&	Bitwise AND
+|	Bitwise OR
+^	Bitwise exclusive OR
+SQL Comparison Operators
+Operator	Description	Example
+=	Equal to	
+>	Greater than	
+<	Less than	
+>=	Greater than or equal to	
+<=	Less than or equal to	
+<>	Not equal to	
+SQL Compound Operators
+Operator	Description
++=	Add equals
+-=	Subtract equals
+*=	Multiply equals
+/=	Divide equals
+%=	Modulo equals
+&=	Bitwise AND equals
+^-=	Bitwise exclusive equals
+|*=	Bitwise OR equals
+SQL Logical Operators
+Operator	Description	Example
+ALL	TRUE if all of the subquery values meet the condition	
+AND	TRUE if all the conditions separated by AND is TRUE	
+ANY	TRUE if any of the subquery values meet the condition	
+BETWEEN	TRUE if the operand is within the range of comparisons	
+EXISTS	TRUE if the subquery returns one or more records	
+IN	TRUE if the operand is equal to one of a list of expressions	
+LIKE	TRUE if the operand matches a pattern	
+NOT	Displays a record if the condition(s) is NOT TRUE	
+OR	TRUE if any of the conditions separated by OR is TRUE	
+SOME	TRUE if any of the subquery values meet the condition	
+
+
+-------------------------------------------------------------------------------
