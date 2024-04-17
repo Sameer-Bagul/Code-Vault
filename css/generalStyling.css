@@ -1,0 +1,76 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+
+/* VARIABLES CSS  */
+:root {
+    /*========== Colors ==========*/
+    --first-color: #081f37;
+    --title-color: #5fc9f3;
+    --text-color: hsl(0, 0%, 100%);
+    --body-color: #2e79ba;
+    --bg-color : rgba(0, 0, 0, 0.411);
+}
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	overflow-x: hidden;
+
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+    
+    list-style:none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+/* header styling of each notes page */
+header {
+    position: fixed;
+    width: 100%;
+    height: auto;
+    display: flex;
+    padding: 10px ; 
+    z-index: 100;
+    border-bottom: 1px dashed white;
+    background: var(--bg-color);
+    backdrop-filter: blur(10px);   
+}
+
+.logo {
+    font-size: 25px;
+    margin-left: 2%; 
+    letter-spacing: 2px;
+}
+.dash{
+    font-size: 29px;
+    font-weight: 300;
+}
+.cc{
+    font-size: 18px;
+    font-weight: 300;
+}
+
+
+.sections{
+    width: 96%;
+    padding: 2%;
+     border-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); 
+    background-color:var(--bg-color);
+    border: 1px white dashed;
+
+    margin: 20px;
+
+    h1{
+        text-align: center;
+    }
+}

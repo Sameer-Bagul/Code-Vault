@@ -5,8 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Vault - MySQL</title>
+
+    <!-- Specialize CSS -->
     <link rel="stylesheet" href="./css/MySQL.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Boxicons icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>\
+    <!-- general CSS styling -->
+    <link rel="stylesheet" href="./css/generalStyling.css">
+
 </head>
 
 <body>
@@ -42,9 +48,8 @@
 
     <!-- index section -->
 
-    <!-- index section -->
-
     <div class="topic-card card">
+
         <h2>Topics in MySQL</h2>
 
         <div class="topic-item-container">
@@ -246,40 +251,47 @@
         </div>
     </div>
 
-    <!-- Notes section -->
+
+    <!--! Notes section -->
+    <!-- todo: Debug this whole section -->
+
     <section class="Notes-card card">
 
         <div class="mainTopic">
 
             <h1 class="mainTopicName">SQL Introduction</h1>
+            
 
             <div class="subTopic">
 
                 <h2 class="subTopicName">What is SQL?</h2>
 
-                <div class="codeSnippet">
-                    <p>SQL stands for <span class="keyword sql" id="sql">Structured Query Language</span>. It is a
+                <div class="codeNotes">
+                    <p>
+                        SQL stands for "Structured Query Language". It is a
                         standard language for accessing and manipulating databases. SQL became a standard of the
                         American National Standards Institute (ANSI) in 1986, and of the International Organization for
-                        Standardization (ISO) in 1987.</p>
-                </div>
-                <div class="codeNotes">
-                    <p>SQL is a powerful language used for managing and manipulating relational databases. It provides a
-                        standardized way to interact with databases across various platforms.</p>
-                    <p>With SQL, you can perform tasks such as querying databases to retrieve specific information,
-                        inserting new data, updating existing data, and deleting records.</p>
+                        Standardization (ISO) in 1987.
+                    </p>
+                    <p>
+                        SQL is a powerful language used for managing and manipulating relational databases. It provides a
+                        standardized way to interact with databases across various platforms.
+                    </p>
+                    <p>
+                        With SQL, you can perform tasks such as querying databases to retrieve specific information,
+                        inserting new data, updating existing data, and deleting records.
+                    </p>
                 </div>
             </div>
 
             <div class="subTopic">
                 <h2 class="subTopicName">What Can SQL do?</h2>
-                <div class="codeSnippet">
+
+                <div class="codeNotes">
                     <p>SQL can execute queries against a database, retrieve data from a database, insert records in a
                         database, update records in a database, delete records from a database, create new databases,
                         create new tables in a database, create stored procedures in a database, create views in a
                         database, and set permissions on tables, procedures, and views.</p>
-                </div>
-                <div class="codeNotes">
                     <p>SQL is versatile and can perform various operations on databases, including data retrieval,
                         manipulation, and administration. It provides a comprehensive set of features for managing
                         relational databases efficiently.</p>
@@ -290,12 +302,11 @@
 
             <div class="subTopic">
                 <h2 class="subTopicName">SQL is a Standard - BUT....</h2>
-                <div class="codeSnippet">
+
+                <div class="codeNotes">
                     <p>Although SQL is an ANSI/ISO standard, there are different versions of the SQL language. However,
                         to be compliant with the ANSI standard, they all support at least the major commands (such as
                         SELECT, UPDATE, DELETE, INSERT, WHERE) in a similar manner.</p>
-                </div>
-                <div class="codeNotes">
                     <p>Most SQL database programs have their own proprietary extensions in addition to the SQL standard.
                         These extensions may include vendor-specific functions, syntax variations, and optimization
                         techniques.</p>
@@ -306,7 +317,8 @@
 
             <div class="subTopic">
                 <h2 class="subTopicName">Using SQL in Your Web Site</h2>
-                <div class="codeSnippet">
+
+                <div class="codeNotes">
                     <p>To build a web site that shows data from a database, you will need:</p>
                     <ul>
                         <li>An RDBMS database program (i.e. MS Access, SQL Server, MySQL)</li>
@@ -314,8 +326,6 @@
                         <li>SQL to get the data you want</li>
                         <li>HTML / CSS to style the page</li>
                     </ul>
-                </div>
-                <div class="codeNotes">
                     <p>SQL is commonly used in combination with server-side scripting languages and HTML/CSS to create
                         dynamic web pages that interact with databases. It forms the backbone of many web applications
                         and content management systems.</p>
@@ -326,8 +336,10 @@
 
             <div class="subTopic">
                 <h2 class="subTopicName">Example</h2>
+
+                <p>Let's consider a simple SQL query:</p>
+
                 <div class="codeSnippet">
-                    <p>Let's consider a simple SQL query:</p>
                     <pre><code>SELECT * FROM Customers;</code></pre>
                 </div>
                 <div class="codeNotes">
@@ -340,13 +352,12 @@
 
             <div class="subTopic">
                 <h2 class="subTopicName">SQL Syntax</h2>
-                <div class="codeSnippet">
+
+                <div class="codeNotes">
                     <p>Most of the actions you need to perform on a database are done with SQL statements. SQL
                         statements consist of keywords that are easy to understand.</p>
                     <p>The following SQL statement returns all records from a table named "Customers":</p>
                     <pre><code>SELECT * FROM Customers;</code></pre>
-                </div>
-                <div class="codeNotes">
                     <p>In this tutorial, we will teach you all about the different SQL statements and their syntax.
                         Understanding SQL syntax is essential for writing effective and efficient database queries.</p>
                 </div>
@@ -354,11 +365,10 @@
 
             <div class="subTopic">
                 <h2 class="subTopicName">Database Tables</h2>
-                <div class="codeSnippet">
+
+                <div class="codeNotes">
                     <p>A database most often contains one or more tables. Each table is identified by a name (e.g.,
                         "Customers" or "Orders"), and contains records (rows) with data.</p>
-                </div>
-                <div class="codeNotes">
                     <p>In this tutorial, we will use the well-known Northwind sample database (included in MS Access and
                         MS SQL Server). The database contains multiple tables representing different entities such as
                         customers, orders, products, and employees.</p>
@@ -369,11 +379,11 @@
 
             <div class="subTopic">
                 <h2 class="subTopicName">Keep in Mind That...</h2>
-                <div class="codeSnippet">
+
+                <div class="codeNotes">
                     <p>SQL keywords are NOT case-sensitive: <span class="keyword sql" id="select">SELECT</span> is the
                         same as <span class="keyword sql" id="select">select</span>.</p>
-                </div>
-                <div class="codeNotes">
+
                     <p>In this tutorial, we will write all SQL keywords in upper-case to maintain consistency and
                         readability. However, SQL queries remain case-insensitive by default in most database systems.
                     </p>
@@ -382,7 +392,8 @@
 
             <div class="subTopic">
                 <h2 class="subTopicName">Some of The Most Important SQL Commands</h2>
-                <div class="codeSnippet">
+
+                <div class="codeNotes">
                     <ul>
                         <li><span class="keyword sql" id="select">SELECT</span> - extracts data from a database</li>
                         <li><span class="keyword sql" id="update">UPDATE</span> - updates data in a database</li>
@@ -399,8 +410,6 @@
                             key)</li>
                         <li><span class="keyword sql" id="drop_index">DROP INDEX</span> - deletes an index</li>
                     </ul>
-                </div>
-                <div class="codeNotes">
                     <p>These are some of the most commonly used SQL commands for database management and manipulation.
                         Familiarizing yourself with these commands is essential for efficiently working with databases
                         and writing effective SQL queries.</p>
@@ -428,8 +437,7 @@
 
                 <div class="syntaxSnippet">
                     <p>Syntax:</p>
-                    <pre><code>SELECT <span class="keyword column">column1</span>, <span class="keyword column">column2</span>, ...
-FROM <span class="keyword table">table_name</span>;</code></pre>
+                    <pre><code>SELECT <span class="keyword column">column1</span>, <span class="keyword column">column2</span>, ... FROM <span class="keyword table">table_name</span>;</code></pre>
                     <p>Here, <span class="keyword column">column1</span>, <span class="keyword column">column2</span>,
                         ... are the field names of the table you want to select data from.</p>
                     <p>The <span class="keyword table">table_name</span> represents the name of the table you want to
